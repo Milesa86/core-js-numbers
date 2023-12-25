@@ -224,8 +224,12 @@ function isPrime(n) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-  
+function toNumber(value, def) {
+  const number = Number(value);
+  if (Number.isNaN(number)) {
+    return def;
+  }
+  return number;
 }
 
 /**
@@ -239,8 +243,8 @@ function toNumber(/* value, def */) {
  *   -2 => -8
  *   0  => 0
  */
-function getCube(/* num */) {
-  throw new Error('Not implemented');
+function getCube(num) {
+  return num ** 3;
 }
 
 /**
